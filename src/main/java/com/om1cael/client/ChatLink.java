@@ -15,10 +15,14 @@ public class ChatLink {
     private ByteBuffer buffer;
 
     public static void main(String[] args) {
-        new ChatLink().setupClient();
+        try {
+            new ChatLink().setupClient(args[0], args[1]);
+        } catch (ArrayIndexOutOfBoundsException noArgsException) {
+            System.err.println("You didn't provide the IP and port of the server.");
+        }
     }
 
-    private void setupClient() {
+    private void setupClient(String ip, String port) {
         this.buffer = ByteBuffer.allocate(1024);
 
         try(SocketChannel serverChannel = SocketChannel.open();
@@ -27,7 +31,7 @@ public class ChatLink {
         ) {
             this.setupUsername(scanner);
 
-            serverChannel.connect(new InetSocketAddress(1024));
+            serverChannel.connect(new InetSocketAddress(ip, Integer.parseInt(port)));
             this.sendUUIDToServer(serverChannel);
 
             System.out.println("To connect with your friend, share your ID: " + getClientUUID());
