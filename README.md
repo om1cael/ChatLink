@@ -2,8 +2,8 @@
 
 Welcome to **ChatLink Client**! This is a lightweight Java client application designed to connect to the [ChatLinkServer](https://github.com/om1cael/ChatLink-Server) for global and private chat communication.
 
-> [!CAUTION]  
-> Don't use this client for any sensitive purpose. See [ChatLinkServer README](https://github.com/om1cael/ChatLink-Server/blob/main/README.md)
+> [!NOTE]  
+> This application is not meant to be used for real communication. See [ChatLinkServer README](https://github.com/om1cael/ChatLink-Server/blob/main/README.md)
 
 ## Features 🌟
 
